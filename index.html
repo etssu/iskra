@@ -17,7 +17,183 @@
 <body>
     <a class="skip-link" href="#main">Preskočiť na obsah</a>
     <header class="site-header">
-        
+        <a class="logo" href="#domov" aria-label="Iskra — domov"><span class="logo-match" aria-hidden="true"></span><span aria-hidden="true">Iskra</span></a>
+        <nav class="header-actions" aria-label="Hlavné menu">
+            <button id="record-button" class="icon-button" type="button" aria-label="Nahrať riešenie" title="Nahrať riešenie" disabled>
+                <svg class="icon" aria-hidden="true"><use href="img/icons.svg#camera"></use></svg>
+            </button>
+            <a id="help-link" href="#navod">Návod</a>
+        </nav>
     </header>
+
+    <main id="main">
+        <p id="storage-notice" class="notice" role="status" hidden></p>
+        <section id="domov" class="home-page" aria-labelledby="home-title">
+            <div class="home-content">
+                <p class="home-eyebrow">LOGICKÁ HRA SO ZÁPALKAMI</p>
+                <h1 id="home-title">
+                    Rozhýb svoju <span>logiku.</span>
+                </h1>
+                <p class="home-description">
+                    Vyskúšaj si pätnásť logických hlavolamov.
+                    Presúvaj zápalky, premýšľaj nad riešeniami
+                    a objav, čo všetko dokáže tvoja predstavivosť.
+                </p>
+                <a href="#hra" class="primary-button home-start">
+                    Začať hrať
+                </a>
+            </div>
+            <div class="home-categories">
+                <h2>Čo ťa čaká?</h2>
+                <div class="category-cards">
+                    <div class="category-card">
+                        <span class="category-number">01</span>
+                        <h3>Číselné úlohy</h3>
+                        <p>Rovnice a nerovnice, ktoré musíš opraviť.</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-number">02</span>
+                        <h3>Rímske čísla</h3>
+                        <p>Hraj sa s rímskymi číslicami a nájdi riešenie.</p>
+                    </div>
+                    <div class="category-card">
+                        <span class="category-number">03</span>
+                        <h3>Logické hlavolamy</h3>
+                        <p>Zapoj predstavivosť a vyrieš netradičné úlohy.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="game-view" class="game" aria-labelledby="task-title">
+            <nav id="categories" class="categories" aria-label="Kategórie úloh"></nav>
+            <div id="game-content" hidden>
+                <p class="task-meta"><span id="task-counter"></span><span aria-hidden="true">·</span><span id="difficulty"></span></p>
+                <h1 id="task-title">Presuň jednu zápalku</h1>
+                <p id="task-description" class="task-description"></p>
+                <canvas id="board" width="1880" height="840" tabindex="0" aria-label="Herné pole so zápalkami" aria-describedby="board-help">
+                    Váš prehliadač nepodporuje herné pole Canvas.
+                </canvas>
+                <div class="board-caption">
+                    <p id="board-help" class="board-help">Ťahaj zápalky. Vybranú otoč kruhovým úchytom.</p>
+                    <div id="solution-notice" class="solution-notice" hidden>
+                        <span>Zobrazené riešenie</span>
+                        <button id="return-button" class="text-button" type="button">Späť k hre</button>
+                    </div>
+                </div>
+                <div class="game-controls">
+                    <button id="check-button" class="primary-button" type="button">Skontrolovať</button>
+                    <p id="feedback" class="feedback" role="status"></p>
+                    <div class="secondary-actions" role="group" aria-label="Pomoc pri riešení">
+                        <button id="hint-button" class="icon-button" type="button" aria-label="Nápoveda" title="Nápoveda">
+                            <svg class="icon" aria-hidden="true"><use href="img/icons.svg#bulb"></use></svg>
+                        </button>
+                        <button id="reset-button" class="icon-button" type="button" aria-label="Obnoviť úlohu" title="Obnoviť úlohu">
+                            <svg class="icon" aria-hidden="true"><use href="img/icons.svg#reset"></use></svg>
+                        </button>
+                        <button id="solution-button" class="icon-button" type="button" aria-label="Zobraziť riešenie" aria-pressed="false" title="Zobraziť riešenie">
+                            <svg class="icon" aria-hidden="true"><use href="img/icons.svg#eye"></use></svg>
+                        </button>
+                    </div>
+                </div>
+                <div id="sensor-controls" class="sensor-controls" hidden>
+                    <button id="sensor-button" class="text-button" type="button">Zapnúť ovládanie pohybom</button>
+                    <p id="sensor-status" role="status">Naklonením zobrazíš riešenie, zatrasením obnovíš úlohu.</p>
+                </div>
+            </div>
+            <p id="load-status" class="notice" role="status">Načítavam hlavolamy…</p>
+            <button id="retry-button" class="text-button" type="button" hidden>Skúsiť znova</button>
+            <noscript><p>Na hranie zapni JavaScript. Návod si môžeš prečítať aj bez neho.</p></noscript>
+        </section>
+
+        <article id="help-view" class="help-page" aria-labelledby="help-title">
+            <h1 id="help-title">O hre</h1>
+            <p>Iskra je logická hra so zápalkami. Presúvaj a otáčaj zápalky podľa zadania a nájdi správne riešenie.</p>
+            <p>Čaká ťa <span id="total-tasks">15</span> úloh v troch kategóriách: číselné rovnice a nerovnice, rímske čísla a logické hlavolamy. V tejto sade číselných úloh opravuješ rovnice.</p>
+            <hr>
+            <h2>Ako hrať</h2>
+            <ol class="instructions">
+                <li>
+                    <h3>Presuň a otoč</h3>
+                    <p>Myšou alebo prstom presuň zápalku. Vyber ju a potiahni kruhový úchyt, aby si ju otočil. Zápalky sa môžu aj prekrývať. Pri pustení sa blízko správnej pozície jemne prichytia.</p>
+                    <p>Na klávesnici vyber zápalku klávesom Enter, ďalšiu opäť Enter. Šípky ju posúvajú, R ju otočí o 15° a Shift + R opačným smerom. Escape zruší výber.</p>
+                </li>
+                <li>
+                    <h3>Over riešenie</h3>
+                    <p>Dodrž počet presunutých zápaliek v zadaní a stlač <strong>Skontrolovať</strong>. Počíta sa počet zápaliek na inom mieste oproti začiatku, nie počet potiahnutí myšou. Dĺžku zápaliek nemeníš. Znamienko rovnosti zostáva na mieste.</p>
+                    <p>Pri čísliciach používaj tvar digitálneho displeja. Rímske I znamená 1, V je 5 a X je 10; IV je 4 a IX je 9. V logických úlohách počítaj celé štvorce a trojuholníky všetkých veľkostí, aj tie vytvorené krížením zápaliek.</p>
+                </li>
+                <li>
+                    <h3>Pomoc pri hre</h3>
+                    <ul class="icon-legend">
+                        <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#bulb"></use></svg><span><strong>Nápoveda</strong> ukáže krátku radu.</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#reset"></use></svg><span><strong>Obnoviť úlohu</strong> vráti zápalky na začiatok.</span></li>
+                        <li><svg class="icon" aria-hidden="true"><use href="img/icons.svg#eye"></use></svg><span><strong>Zobraziť riešenie</strong> ukáže jeden správny výsledok. Tlačidlom Späť k hre sa vrátiš k vlastnému rozloženiu.</span></li>
+                    </ul>
+                    <p>Samotné zobrazenie riešenia úlohu neoznačí za vyriešenú.</p>
+                </li>
+                <li>
+                    <h3>Hranie na mobile</h3>
+                    <p>Pod herným poľom zapni ovládanie pohybom a prípadne povoľ senzory. Najprv drž telefón v pohodlnej polohe. Výraznejším naklonením zobrazíš riešenie; návratom do pôvodnej polohy ho skryješ. Krátkym zatrasením obnovíš úlohu.</p>
+                    <p>Ak zariadenie senzory nepodporuje alebo ich nepovolíš, použi tlačidlá s okom a šípkou.</p>
+                </li>
+                <li>
+                    <h3>Záznam postupu</h3>
+                    <p>Kamerou v hlavičke hry spustíš záznam herného poľa. Červeným tlačidlom ho zastavíš. Video si môžeš pozrieť a stiahnuť. Nenahráva sa webkamera ani zvuk. Pri zmene kategórie alebo odchode do návodu sa záznam zastaví.</p>
+                    <p>Video si stiahni pred zatvorením stránky; uložený herný postup video neobsahuje.</p>
+                </li>
+                <li>
+                    <h3>Kategórie a uložený postup</h3>
+                    <p>Vyber si kategóriu v hornom menu. Úlohy dostaneš v náhodnom poradí a neopakujú sa, kým kategóriu nedokončíš. Úloha X / 5 označuje poradie v aktuálnom hraní. Ľahká, Stredná a Ťažká označujú náročnosť.</p>
+                    <p>Každá kategória si samostatne pamätá poradie, vyriešené úlohy aj rozloženie rozpracovanej úlohy. Po obnovení stránky pokračuješ na rovnakom mieste. Vymazanie údajov stránky alebo súkromné prehliadanie môže uložený postup odstrániť.</p>
+                    <p>Po dokončení môžeš vybrať inú kategóriu alebo stlačiť Hrať znova a začať nové náhodné poradie.</p>
+                </li>
+                <li>
+                    <h3>Hranie bez internetu</h3>
+                    <p>Po prvom úspešnom načítaní sa hra uloží aj na hranie bez internetu. Ak to prehliadač podporuje, v jeho menu ju môžeš nainštalovať alebo pridať na plochu. Návod vytlačíš cez menu prehliadača alebo Ctrl + P.</p>
+                </li>
+            </ol>
+            <a class="primary-button back-to-game" href="#hra">Späť do hry</a>
+        </article>
+    </main>
+
+    <footer class="site-footer">
+        <div class="footer-content">
+
+            <a class="footer-logo" href="#domov">
+                <span class="logo-match" aria-hidden="true"></span>
+                Iskra
+            </a>
+
+            <p class="footer-description">
+                Malá iskra, veľké nápady.
+            </p>
+
+            <nav class="footer-links" aria-label="Pätička">
+                <a href="#domov">Domov</a>
+                <a href="#hra">Hrať</a>
+                <a href="#navod">Návod</a>
+            </nav>
+
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Iskra. Všetky práva vyhradené.</p>
+            <p>Vytvorené s <span aria-label="láskou">♥</span> a zápalkami.</p>
+        </div>
+    </footer>
+
+
+    <!-- One dialog for hints, messages and video -->
+    <dialog id="dialog" aria-labelledby="dialog-title">
+        <button id="dialog-close" class="dialog-close icon-button" type="button" aria-label="Zavrieť">
+            <svg class="icon" aria-hidden="true"><use href="img/icons.svg#close"></use></svg>
+        </button>
+        <svg class="dialog-icon icon" aria-hidden="true"><use id="dialog-symbol" href="img/icons.svg#bulb"></use></svg>
+        <h2 id="dialog-title">Informácia</h2>
+        <p id="dialog-text"></p>
+        <video id="recording-preview" controls playsinline hidden></video>
+        <div id="dialog-actions" class="dialog-actions"></div>
+    </dialog>
 </body>
 </html>
