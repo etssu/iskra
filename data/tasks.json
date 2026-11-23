@@ -1,0 +1,116 @@
+{
+  "categories": [
+    { "id": "numbers", "name": "Čísla" },
+    { "id": "roman", "name": "Rímske" },
+    { "id": "logic", "name": "Logika" }
+  ],
+  "tasks": [
+    {
+      "id": "numbers-1", "category": "numbers", "difficulty": "easy", "type": "numbers", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu jedným ťahom.",
+      "hint": "Šestku aj jednotku nechaj na mieste. Zmeň poslednú číslicu.",
+      "start": "6 - 1 = 3", "solutions": ["6 - 1 = 5"]
+    },
+    {
+      "id": "numbers-2", "category": "numbers", "difficulty": "easy", "type": "numbers", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu jedným ťahom.",
+      "hint": "Z trojky môžeš jedným presunom vytvoriť inú číslicu.",
+      "start": "4 + 3 = 9", "solutions": ["4 + 5 = 9"]
+    },
+    {
+      "id": "numbers-3", "category": "numbers", "difficulty": "medium", "type": "numbers", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu jedným ťahom.",
+      "hint": "Presuň zápalku z poslednej číslice do prvej.",
+      "start": "9 + 1 = 8", "solutions": ["8 + 1 = 9"]
+    },
+    {
+      "id": "numbers-4", "category": "numbers", "difficulty": "medium", "type": "numbers", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu jedným ťahom.",
+      "hint": "Prvá číslica jednu zápalku odovzdá poslednej. Päťka sa nemení.",
+      "start": "9 + 5 = 6", "solutions": ["3 + 5 = 8"]
+    },
+    {
+      "id": "numbers-5", "category": "numbers", "difficulty": "hard", "type": "numbers", "moves": 2,
+      "title": "Presuň dve zápalky", "description": "Oprav rovnicu presunutím presne dvoch zápaliek.",
+      "hint": "Jedno riešenie zmení plus na mínus a dvojku na osmičku. Existujú aj ďalšie riešenia.",
+      "start": "2 + 3 = 9", "solutions": ["8 - 3 = 5", "0 + 3 = 3", "3 + 3 = 6"]
+    },
+    {
+      "id": "roman-1", "category": "roman", "difficulty": "easy", "type": "roman", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu s rímskymi číslami.",
+      "hint": "Poloha I pred alebo za V mení hodnotu čísla. Existuje viac riešení.",
+      "start": "VI + II = VI", "solutions": ["IV + II = VI", "V + II = VII", "VI + I = VII"]
+    },
+    {
+      "id": "roman-2", "category": "roman", "difficulty": "easy", "type": "roman", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu s rímskymi číslami.",
+      "hint": "Skús presunúť I na opačnú stranu X. Existujú aj ďalšie riešenia.",
+      "start": "XI - V = IV", "solutions": ["IX - V = IV", "X - VI = IV", "XI - V = VI", "XI - VI = V"]
+    },
+    {
+      "id": "roman-3", "category": "roman", "difficulty": "medium", "type": "roman", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu s rímskymi číslami.",
+      "hint": "Zvislá zápalka zo znamienka plus sa môže stať jednotkou.",
+      "start": "X + II = VII", "solutions": ["X - III = VII", "IX - II = VII", "X - II = VIII"]
+    },
+    {
+      "id": "roman-4", "category": "roman", "difficulty": "medium", "type": "roman", "moves": 1,
+      "title": "Presuň jednu zápalku", "description": "Oprav rovnicu s rímskymi číslami.",
+      "hint": "Presuň jednu jednotku z ľavej strany rovnice na pravú.",
+      "start": "XII + I = XI", "solutions": ["XI + I = XII"]
+    },
+    {
+      "id": "roman-5", "category": "roman", "difficulty": "hard", "type": "roman", "moves": 2,
+      "title": "Presuň dve zápalky", "description": "Oprav rovnicu presunutím presne dvoch zápaliek.",
+      "hint": "Zmeň plus na mínus. Jednu ďalšiu jednotku presuň z prvého čísla do výsledku.",
+      "start": "XII + II = VII", "solutions": ["XI - III = VIII"]
+    },
+    {
+      "id": "logic-1", "category": "logic", "difficulty": "easy", "type": "shape", "moves": 1,
+      "title": "Vytvor dva štvorce", "description": "Presuň jednu zápalku. Vytvor dva rovnaké štvorce.",
+      "hint": "Otoč vnútornú zápalku a rozdeľ obdĺžnik na dve polovice.",
+      "width": 600, "height": 400, "length": 120,
+      "start": [[180,140,300,140],[300,140,420,140],[180,260,300,260],[300,260,420,260],[180,140,180,260],[420,140,420,260],[240,200,360,200]],
+      "solutions": [[[180,140,300,140],[300,140,420,140],[180,260,300,260],[300,260,420,260],[180,140,180,260],[420,140,420,260],[300,140,300,260]]]
+    },
+    {
+      "id": "logic-2", "category": "logic", "difficulty": "easy", "type": "shape", "moves": 2,
+      "title": "Postav domček", "description": "Presuň dve voľné zápalky. Nad štvorcom postav trojuholníkovú strechu.",
+      "hint": "Horná strana štvorca je aj základňou strechy. Obe voľné zápalky otoč.",
+      "width": 600, "height": 420, "length": 120,
+      "start": [[240,170,360,170],[360,170,360,290],[240,290,360,290],[240,170,240,290],[120,355,240,355],[360,355,480,355]],
+      "solutions": [[[240,170,360,170],[360,170,360,290],[240,290,360,290],[240,170,240,290],[240,170,300,66.077],[300,66.077,360,170]]]
+    },
+    {
+      "id": "logic-3", "category": "logic", "difficulty": "medium", "type": "shape", "moves": 2,
+      "title": "Nájdi päť štvorcov", "description": "Presuň dve voľné zápalky. Počítaj malé aj veľké štvorce. Kríženie je dovolené.",
+      "hint": "Voľné zápalky vytvoria kríž vnútri štvorca. Nezabudni započítať aj vonkajší štvorec.",
+      "width": 600, "height": 400, "length": 120,
+      "start": [[240,120,360,120],[360,120,360,240],[240,240,360,240],[240,120,240,240],[120,320,240,320],[360,320,480,320]],
+      "solutions": [[[240,120,360,120],[360,120,360,240],[240,240,360,240],[240,120,240,240],[240,180,360,180],[300,120,300,240]]]
+    },
+    {
+      "id": "logic-4", "category": "logic", "difficulty": "medium", "type": "shape", "moves": 2,
+      "title": "Vytvor dva trojuholníky", "description": "Presuň dve zápalky. Vytvor dva rovnaké malé trojuholníky.",
+      "hint": "Dve zápalky z jedného rohu uzavrú malé trojuholníky pri ostatných rohoch.",
+      "width": 600, "height": 400, "length": 120,
+      "start": [[180,300,240,196.077],[240,196.077,300,92.154],[300,92.154,360,196.077],[360,196.077,420,300],[180,300,300,300],[300,300,420,300]],
+      "solutions": [
+        [[180,300,240,196.077],[240,196.077,300,92.154],[300,92.154,360,196.077],[180,300,300,300],[240,196.077,360,196.077],[240,196.077,300,300]],
+        [[240,196.077,300,92.154],[300,92.154,360,196.077],[360,196.077,420,300],[300,300,420,300],[240,196.077,360,196.077],[300,300,360,196.077]],
+        [[180,300,240,196.077],[360,196.077,420,300],[180,300,300,300],[300,300,420,300],[240,196.077,300,300],[300,300,360,196.077]]
+      ]
+    },
+    {
+      "id": "logic-5", "category": "logic", "difficulty": "hard", "type": "shape", "moves": 4,
+      "title": "Vytvor desať štvorcov", "description": "Presuň štyri zápalky. Počítaj štvorce všetkých veľkostí. Zápalky sa môžu krížiť.",
+      "hint": "Ponechaj dva štvorce, ktoré sa dotýkajú iba rohom. Každý rozdeľ krížom na štyri menšie.",
+      "width": 600, "height": 420, "length": 120,
+      "start": [[180,90,300,90],[300,90,420,90],[180,210,300,210],[300,210,420,210],[180,330,300,330],[300,330,420,330],[180,90,180,210],[180,210,180,330],[300,90,300,210],[300,210,300,330],[420,90,420,210],[420,210,420,330]],
+      "solutions": [
+        [[300,90,420,90],[180,210,300,210],[300,210,420,210],[180,330,300,330],[180,210,180,330],[300,90,300,210],[300,210,300,330],[420,90,420,210],[300,150,420,150],[360,90,360,210],[180,270,300,270],[240,210,240,330]],
+        [[180,90,300,90],[180,210,300,210],[300,210,420,210],[300,330,420,330],[180,90,180,210],[300,90,300,210],[300,210,300,330],[420,210,420,330],[180,150,300,150],[240,90,240,210],[300,270,420,270],[360,210,360,330]]
+      ]
+    }
+  ]
+}
