@@ -43,6 +43,20 @@
                     Začať hrať
                 </a>
             </div>
+            <section class="overall-progress">
+                <h2>Tvoj pokrok</h2>
+
+                <div class="progress-info">
+                    <span>Všetky úlohy</span>
+                    <span id="overall-progress-text">0 / 15</span>
+                </div>
+
+                <div class="progress-track">
+                    <div id="overall-progress" class="progress-fill"></div>
+                </div>
+
+                <div id="category-progress-list"></div>
+            </section>
             <div class="home-categories">
                 <h2>Čo ťa čaká?</h2>
                 <div class="category-cards">
@@ -68,6 +82,17 @@
         <section id="game-view" class="game" aria-labelledby="task-title">
             <nav id="categories" class="categories" aria-label="Kategórie úloh"></nav>
             <div id="game-content" hidden>
+                <div class="progress-section" id="category-progress-section">
+                    <div class="progress-info">
+                        <span>Pokrok v kategórii</span>
+                        <span id="category-progress-text">0 / 5</span>
+                    </div>
+
+                    <div class="progress-track">
+                        <div id="category-progress" class="progress-fill"></div>
+                    </div>
+                </div>
+
                 <p class="task-meta"><span id="task-counter"></span><span aria-hidden="true">·</span><span id="difficulty"></span></p>
                 <h1 id="task-title">Presuň jednu zápalku</h1>
                 <p id="task-description" class="task-description"></p>

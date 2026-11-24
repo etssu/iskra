@@ -1,6 +1,6 @@
 // Use a versioned cache name unique to this project URL
 const cachePrefix = "iskra-" + self.registration.scope;
-const cacheName = cachePrefix + "v27";
+const cacheName = cachePrefix + "v28";
 const files = [
     "./", "index.html", "manifest.webmanifest",
     "css/styles.css", "css/print.css",
